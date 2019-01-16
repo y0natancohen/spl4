@@ -70,19 +70,20 @@ class Repository(object):
             );
         """)
 
-    def printAllCurrentData(self):
-        print('courses')
-        for course in repo.courses.find_all():
-            print('({}, \'{}\', \'{}\', {}, {}, {})'.format(course.id, course.course_name, course.student
-                                                            , course.number_of_students, course.class_id,
-                                                            course.course_length))
-        print('classrooms')
-        for classroom in repo.classrooms.find_all():
-            print('({}, \'{}\', {}, {})'.format(classroom.id, classroom.location, classroom.current_course_id,
-                                                classroom.current_course_time_left))
-        print('students')
-        for student in repo.students.find_all():
-            print('(\'{}\', {})'.format(student.grade, student.count))
+
+def printAllCurrentData():
+    print('courses')
+    for course in repo.courses.find_all():
+        print('({}, \'{}\', \'{}\', {}, {}, {})'.format(course.id, course.course_name, course.student
+                                                        , course.number_of_students, course.class_id,
+                                                        course.course_length))
+    print('classrooms')
+    for classroom in repo.classrooms.find_all():
+        print('({}, \'{}\', {}, {})'.format(classroom.id, classroom.location, classroom.current_course_id,
+                                            classroom.current_course_time_left))
+    print('students')
+    for student in repo.students.find_all():
+        print('(\'{}\', {})'.format(student.grade, student.count))
 
 
 # FOREIGN KEY(student_id)     REFERENCES students(id),

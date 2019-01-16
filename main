@@ -1,4 +1,4 @@
 rm ./schedule.db
-python create_db.py config3.txt
+python create_db.py config1.txt
 echo 000000000000000000000000000000000000000000000000000000000000000000000
 python schedule.py

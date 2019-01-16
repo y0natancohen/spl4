@@ -1,5 +1,5 @@
 import os
-from persistence import repo
+from persistence import repo, printAllCurrentData
 
 
 def main():
@@ -7,7 +7,7 @@ def main():
     iteration_num = 0
     while os.path.isfile('schedule.db') and len(repo.courses.find_all()) > 0:
         assign_classes(iteration_num)
-        repo.printAllCurrentData()
+        printAllCurrentData()
         iteration_num += 1
         for classroom in get_sorted_classrooms():
             if has_course(classroom):
